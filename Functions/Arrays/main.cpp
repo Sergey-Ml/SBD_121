@@ -8,10 +8,13 @@ const unsigned int COLS = 5;
 
 void FillRand(int arr[], const unsigned int n, int minRand = 0, int maxRand = 100);	//Заполняет массив случайными числами
 void FillRand(double arr[], const unsigned int n, int minRand = 0, int maxRand = 100);	//Заполняет массив случайными числами
+template<typename T> //создали шаблон
+void Print(T arr[], const unsigned int n);
+//void Print(double arr[], const unsigned int n);
+template<typename T>
+void Print(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
 
-void Print(int arr[], const unsigned int n);
-void Print(double arr[], const unsigned int n);
-void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+template<typename T> T 
 
 void main()
 {
@@ -55,7 +58,7 @@ void FillRand(double arr[], const unsigned int n, int minRand, int maxRand)
 		arr[i] /= 100;
 	}
 }
-
+template<typename T>;
 void Print(int arr[], const unsigned int n)
 {
 	for (int i = 0; i < n; i++)
@@ -64,7 +67,8 @@ void Print(int arr[], const unsigned int n)
 	}
 	cout << endl;
 }
-void Print(double arr[], const unsigned int n)
+template<typename T>;
+void Print(int arr[], const unsigned int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -72,7 +76,8 @@ void Print(double arr[], const unsigned int n)
 	}
 	cout << endl;
 }
-void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+template<typename T>;
+void Print(double arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
 	{
